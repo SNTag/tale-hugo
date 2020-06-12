@@ -1,24 +1,30 @@
 {{ define "main" }}
 
 <main>
-	{{ partial "index/introduction.html" . }}
+  {{ partial "index/introduction.html" . }}
 
-	<div class="catalogue">
-		{{ range (.Paginate .Site.RegularPages).Pages }}
-			{{ .Render "summary" }}
-		{{ end }}
-	</div>
+  <center>
+    <span class="main-header-image">
+      <a href="/"><img src="/images/header/clean-and-simple-header.png"></a>
+    </span>
+  </center>
 
-	<div class="pagination">
-		{{ if .Paginator.HasPrev }}
-			<a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
-		{{ end }}
-		{{ if .Paginator.HasNext }}
-			<a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
-		{{ end }}
+  <div class="catalogue">
+    {{ range (.Paginate .Site.RegularPages).Pages }}
+    {{ .Render "summary" }}
+    {{ end }}
+  </div>
 
-		<span>{{ .Paginator.PageNumber }}</span>
-	</div>
+  <div class="pagination">
+    {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="left arrow">&#8592;</a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="right arrow">&#8594;</a>
+    {{ end }}
+
+    <span>{{ .Paginator.PageNumber }}</span>
+  </div>
 </main>
 
 {{ end }}
