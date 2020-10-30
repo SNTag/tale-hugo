@@ -12,6 +12,14 @@
 		{{ partial "single/footer.html" . }}
 	</div>
 
+<script src="https://utteranc.es/client.js"
+        repo="sntag/sntag.github.io"
+        issue-term="title"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
 	<div class="pagination">
 		{{- if .PrevPage }}
 		<a href="{{ .PrevPage.RelPermalink }}" class="left arrow">&#8592;</a>
